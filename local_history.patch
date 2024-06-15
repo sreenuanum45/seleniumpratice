@@ -1,0 +1,24 @@
+Index: src/test/java/mypraticework/carouselslidertest_6.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/mypraticework/carouselslidertest_6.java b/src/test/java/mypraticework/carouselslidertest_6.java
+--- a/src/test/java/mypraticework/carouselslidertest_6.java	
++++ b/src/test/java/mypraticework/carouselslidertest_6.java	(date 1713504075002)
+@@ -1,13 +1,12 @@
+ package mypraticework;
+ 
++import io.github.bonigarcia.wdm.WebDriverManager;
++import mypractice_utility.CarouselSliderUtility;
+ import org.openqa.selenium.By;
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.chrome.ChromeDriver;
+ import org.openqa.selenium.remote.RemoteWebDriver;
+ 
+-import io.github.bonigarcia.wdm.WebDriverManager;
+-import mypractice_utility.CarouselSliderUtility;
+-
+ public class carouselslidertest_6 {
+ 
+ 	public static void main(String[] args) throws Throwable {

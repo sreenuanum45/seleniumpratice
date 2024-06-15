@@ -1,0 +1,17 @@
+[1705391207.431][INFO]: Starting ChromeDriver 120.0.6099.109 (3419140ab665596f21b385ce136419fde0924272-refs/branch-heads/6099@{#1483}) on port 24109
+[1705391207.431][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1705391207.580][INFO]: [cba728405316c68126b80f558cea7fff] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "binary": "C:\\Users\\sreenu\\.cache\\selenium\\chrome\\win64\\120.0.6099.109\\chrome.exe",
+            "debuggerAddress": "localhost:50122",
+            "extensions": [  ]
+         }
+      } ]
+   }
+}
+[1705391267.768][INFO]: [cba728405316c68126b80f558cea7fff] RESPONSE InitSession ERROR unknown error: cannot connect to chrome at localhost:50122
+from chrome not reachable
