@@ -16,6 +16,7 @@ public class ElementScrolling_1 {
         driver.get("https://www.amazon.in/");
         Thread.sleep(5000);
         WebElement e=driver.findElement(By.id("twotabsearchtextbox"));
+
         driver.executeScript("arguments[0].scrollIntoView(true);",e);
         driver.executeScript("var x=arguments[0].scrollHeight; arguments[0].scrollTop=x;",e);
         Thread.sleep(5000);
@@ -24,6 +25,16 @@ public class ElementScrolling_1 {
         driver.executeScript("var x=arguments[0].scrollWidth; arguments[0].scrollLeft=x;",e);
         Thread.sleep(5000);
         driver.executeScript("arguments[0].scrollLeft=0;",e);
+//pagescrolling in selenium
+        driver.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+        Thread.sleep(5000);
+        driver.executeScript("window.scrollTo(0,-(document.body.scrollHeight));");
+        Thread.sleep(5000);
+        driver.executeScript("window.scrollTo(document.body.scrollWidth,0);");
+        Thread.sleep(5000);
+        driver.executeScript("window.scrollTo(document.body.scrollWidth,document.body.scrollHeight);");
+        Thread.sleep(5000);
+        driver.executeScript("window.scrollTo(document.body.scrollWidth,-(document.body.scrollHeight));");
 
 
 

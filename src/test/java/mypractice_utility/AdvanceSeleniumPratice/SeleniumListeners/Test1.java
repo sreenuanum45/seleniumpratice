@@ -17,11 +17,12 @@ public class Test1 {
         WebDriver driver = new ChromeDriver(co);
         driver.manage().window().maximize();
 
-        MyListener listener = new MyListener(); // Ensure MyListener implements WebDriverListener
-        WebDriver wrappedDriver = new EventFiringDecorator(listener).decorate(driver);
+        MyWebDriverListener listener = new MyWebDriverListener();
+        WebDriver decorated = new EventFiringDecorator<>(listener).decorate(driver);
 
-        wrappedDriver.get("https://www.flipkart.com");
-        WebElement e = wrappedDriver.findElement(By.linkText("Cart"));
+
+        decorated.get("https://www.flipkart.com");
+        WebElement e = decorated.findElement(By.linkText("Cart"));
      try {
             e.click();
         } catch (Exception e1) {

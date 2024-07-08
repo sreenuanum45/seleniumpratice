@@ -34,7 +34,7 @@ public class SmsBomber {
      String script="arguments[0].scrollIntoView();";
         driver.executeScript(script,e);
         e.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='mobno']"))).sendKeys("8801545964");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='mobno']"))).sendKeys("7416472820");
 
 
         driver.findElement(By.xpath("(//input[@type='number'])[2]")).sendKeys("200");
@@ -50,7 +50,7 @@ public class SmsBomber {
            WebElement e1=driver.findElement(By.xpath("//h4[text()='SMS BOMB SUCCESSFUL']"));
            if(e1.isDisplayed()){
                driver.navigate().back();
-               wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='mobno']"))).sendKeys("8801545964");
+               wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='mobno']"))).sendKeys("7416472820");
 
 
                driver.findElement(By.xpath("(//input[@type='number'])[2]")).sendKeys("200");

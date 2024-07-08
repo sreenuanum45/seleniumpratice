@@ -1,11 +1,15 @@
 package DailyPratice;
 
 import com.github.javafaker.Faker;
+
+import mypractice_utility.AdvanceSeleniumPratice.SeleniumListeners.MyWebDriverListener;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
@@ -28,12 +32,14 @@ public class TestDemo {
       options.addArguments("--remote-allow-origins=*");
       options.addArguments("--disable-blink-features=AutomationControlled");
       faker = new Faker();
-       driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        driver.manage().timeouts().setScriptTimeout(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.navigate().to("https://tutorialsninja.com/demo/index.php?route=account/register");
+      driver = new ChromeDriver(options);
+    MyWebDriverListener listener = new MyWebDriverListener();
+    WebDriver decorated = new EventFiringDecorator<>(listener).decorate(driver);
+    decorated.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    decorated.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+    decorated.manage().timeouts().setScriptTimeout(Duration.ofSeconds(10));
+    decorated.manage().window().maximize();
+    decorated.navigate().to("https://tutorialsninja.com/demo/index.php?route=account/register");
         wait = new FluentWait<>(driver);
         wait.withTimeout(Duration.ofSeconds(20));
         wait.pollingEvery(Duration.ofSeconds(2));
@@ -49,7 +55,7 @@ public class TestDemo {
         driver.executeScript("arguments[0].click();",wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type='radio'])[2]"))));
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit']"))).click();
        Assert.assertEquals(driver.getTitle(),"Your Account Has Been Created!");
-       driver.close();
+    decorated.close();
 
 
 
