@@ -1,12 +1,10 @@
 package DevtoolsExamples;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.AnyDocument;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-import javax.sound.sampled.Port;
 import java.io.IOException;
 
 public class AccessingExistingBrowser_1 {

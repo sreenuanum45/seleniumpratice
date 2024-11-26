@@ -17,6 +17,7 @@ public class Iframetest1 {
 		System.out.println(s);
 		Thread.sleep(2000);
 		driver.switchTo().defaultContent();
+		driver.quit();
 	}
 
 }

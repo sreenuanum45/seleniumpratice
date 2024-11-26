@@ -18,13 +18,14 @@ public class Cookie_6 {
     CookiesUtility cu;
     RemoteWebDriver driver;
     List<String>tc;
+    Date today=new Date();
     @Test(priority = 1)
     public void AmazonTest1()   {
        String name="session-id";
        String value="12345";
        String domain="www.amazon.in";
        String path="/";
-       Date expiryDate=null;
+       Date expiryDate=new Date(today.getTime()+3000);
        boolean isSecure=true;
        boolean isHttpOnly=false;
        String sameSite="Lax";

@@ -2,6 +2,7 @@ package mypraticework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import mypractice_utility.CookiesUtility;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
@@ -28,7 +29,7 @@ public class Cookie_4 {
     @Test
     public void TimesOfIndia(){
         cu=new CookiesUtility();
-
+       driver.manage().addCookie(new Cookie("timesofindia","Sreenu"));
         System.out.println(cu.getCookiesCount(driver));
         System.out.println(cu.getCookiesList(driver));
        List<String>types= cu.getTypeofCookies(driver,"timesofindia.com","indiatimes.com");

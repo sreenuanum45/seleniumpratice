@@ -1,10 +1,7 @@
 package mypraticework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptException;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -19,10 +16,10 @@ public class IframeTest10_shadowroot {
 		Thread.sleep(5000);
 		driver.switchTo().frame("pact");
 
-		WebElement ShadowroootHostelement = driver.findElement(By.id("snacktime"));
+		WebElement ShadowroootHostelement = driver.findElement(By.xpath("//div[@class='jackPart']"));
 		SearchContext ShadowrootElemet = ShadowroootHostelement.getShadowRoot();
 		WebElement targetElement = ShadowrootElemet.findElement(By.name("chai"));
-
+driver.switchTo().newWindow(WindowType.WINDOW);
 		try {
 			targetElement.click();
 

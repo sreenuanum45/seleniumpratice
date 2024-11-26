@@ -46,7 +46,6 @@ public class Cookie_10 {
                 e1.getMessage();
 
             }
-
             driver1.navigate().to("https://www.flipkart.com");
             Thread.sleep(2000);
             if(driver.getCurrentUrl().contains("https"))

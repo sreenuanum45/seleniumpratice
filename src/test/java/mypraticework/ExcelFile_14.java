@@ -1,8 +1,7 @@
 package mypraticework;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
@@ -16,8 +15,45 @@ public class ExcelFile_14 {
     public void method1() throws IOException {
         File ef=new File("src/test/resources/fileresultbook.xlsx");
         XSSFWorkbook wwb=new XSSFWorkbook();
+        Font font=wwb.createFont();
+        font.setFontHeightInPoints((short) 20);
+        font.setFontName("Arial");
+        font.setBold(true);
+        font.setColor(IndexedColors.RED1.index);
+        //cell style
+        CellStyle cs=wwb.createCellStyle();
+        cs.setFont(font);
+        cs.setWrapText(true);
+        cs.setVerticalAlignment(VerticalAlignment.CENTER);
+        cs.setShrinkToFit(true);
+        cs.setAlignment(HorizontalAlignment.CENTER);
+        cs.setBorderBottom(BorderStyle.THIN);
+        cs.setBorderLeft(BorderStyle.THIN);
+        cs.setFillBackgroundColor(IndexedColors.RED1.index);
+        cs.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        cs.setFillForegroundColor(IndexedColors.RED1.index);
+        CellStyle cs1=wwb.createCellStyle();
+        cs1.setFont(font);
+        cs1.setWrapText(true);
+        cs1.setVerticalAlignment(VerticalAlignment.CENTER);
+        cs1.setShrinkToFit(true);
+        cs1.setAlignment(HorizontalAlignment.CENTER);
+        cs1.setBorderBottom(BorderStyle.THIN);
+        cs1.setBorderLeft(BorderStyle.THIN);
+        cs.setFillBackgroundColor(IndexedColors.RED1.index);
+        cs.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        cs.setFillForegroundColor(IndexedColors.RED1.index);
+        cs.setWrapText(true);
+        cs.setVerticalAlignment(VerticalAlignment.BOTTOM);
+        cs.setShrinkToFit(true);
+        cs.setAlignment(HorizontalAlignment.CENTER);
+        cs.setBorderBottom(BorderStyle.THIN);
+        cs.setBorderLeft(BorderStyle.THIN);
         Sheet sh=wwb.createSheet("Mysheet");
         Row r1=sh.createRow(0);
+        Cell cell=r1.createCell(0);
+        cell.setCellStyle(cs);
+        r1.setHeight((short) 1000);
         r1.createCell(0).setCellValue("Name");
         r1.createCell(1).setCellValue("File/Folder");
         r1.createCell(2).setCellValue("Size");

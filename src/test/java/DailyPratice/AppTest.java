@@ -2,13 +2,12 @@ package DailyPratice;
 
 import com.mailosaur.MailosaurClient;
 import com.mailosaur.MailosaurException;
-import com.mailosaur.models.*;
-import org.testng.Assert;
+import com.mailosaur.models.Message;
+import com.mailosaur.models.MessageSearchParams;
+import com.mailosaur.models.SearchCriteria;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.*;
 

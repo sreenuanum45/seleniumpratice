@@ -6,7 +6,6 @@ import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v122.emulation.Emulation;
 import org.openqa.selenium.devtools.v122.log.Log;
 import org.openqa.selenium.devtools.v122.network.Network;
-
 import org.openqa.selenium.devtools.v122.network.model.ConnectionType;
 import org.openqa.selenium.devtools.v122.network.model.Response;
 import org.openqa.selenium.devtools.v122.network.model.WebSocketFrame;
@@ -15,11 +14,8 @@ import org.openqa.selenium.devtools.v122.performance.model.Metric;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-
 import java.util.List;
 import java.util.Optional;
-
-import static java.lang.Runtime.*;
 
 public class DevToolexample_1 {
     @Test

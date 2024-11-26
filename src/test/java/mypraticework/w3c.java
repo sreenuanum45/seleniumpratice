@@ -25,7 +25,7 @@ public class w3c {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
 		driver.switchTo().defaultContent();
-		driver.close();
+
 
 	}
 

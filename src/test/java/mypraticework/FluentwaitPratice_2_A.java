@@ -1,6 +1,7 @@
 package mypraticework;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.function.Function;
 
 public class FluentwaitPratice_2_A {
     @Test
@@ -20,7 +22,14 @@ public class FluentwaitPratice_2_A {
         wait.withTimeout(Duration.ofSeconds(20));
         wait.pollingEvery(Duration.ofMillis(1000));
         driver.switchTo().frame("iframewrapper");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname"))).sendKeys("anumandla");
+       WebElement firstname = wait.until(new Function<RemoteWebDriver, WebElement>() {
+            @Override
+            public WebElement apply(RemoteWebDriver driver) {
+                return driver.findElement(By.name("firstname"));
+            }
+        });
+       firstname.sendKeys("sreenu");
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname"))).sendKeys("anumandla");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("middlename"))).sendKeys("srenu");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("lastname"))).sendKeys("sreenu");
         Select s=new Select(driver.findElement(By.tagName("select")));

@@ -3,11 +3,9 @@ package DevtoolsExamples;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.Command;
 import org.openqa.selenium.devtools.DevTools;
-
 import org.openqa.selenium.devtools.v85.performance.Performance;
 import org.openqa.selenium.devtools.v85.performance.model.Metric;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import org.testng.annotations.Test;
 
 import java.util.List;

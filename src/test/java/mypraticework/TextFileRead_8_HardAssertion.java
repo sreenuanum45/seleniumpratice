@@ -24,7 +24,6 @@ public class TextFileRead_8_HardAssertion
         BufferedReader br = new BufferedReader(fr);
         String line = "";
         while ((line = br.readLine()) != null) {
-
             RemoteWebDriver driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.get("https://www.gmail.com");

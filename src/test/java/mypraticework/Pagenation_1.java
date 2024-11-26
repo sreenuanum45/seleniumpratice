@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.ashot.AShot;
@@ -28,8 +29,7 @@ public class Pagenation_1 {
 int p=1;
 String s="D:\\batch264\\264pratice\\src\\test\\java\\target\\s";
        while(true) {
-
-            try
+           try
             {
                 Thread.sleep(5000);
                 driver.findElement(By.linkText("Next")).click();
@@ -50,7 +50,6 @@ String s="D:\\batch264\\264pratice\\src\\test\\java\\target\\s";
        Thread.sleep(4000);
         System.out.println(p);
        driver.close();
-
     }
     @BeforeTest
     public void Setup() throws InterruptedException {
@@ -59,5 +58,9 @@ String s="D:\\batch264\\264pratice\\src\\test\\java\\target\\s";
         Thread.sleep(3000);
         driver.manage().window().maximize();
 
+    }
+    @AfterTest
+    public void teardown() {
+        driver.quit();
     }
 }

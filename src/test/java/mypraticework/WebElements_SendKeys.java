@@ -14,12 +14,10 @@ public class WebElements_SendKeys {
     @Test
     public void method1() throws InterruptedException {
         driver.get("https://www.facebook.com/");
-
         WebElement ee=driver.findElement(By.id("email"));
         Thread.sleep(2000);
         ee.sendKeys("7416472820");
         ee.sendKeys(Keys.TAB,"Sreenu45@",Keys.TAB,Keys.TAB,Keys.ENTER);
-
     }
     @BeforeTest
     public void Setup() throws InterruptedException {

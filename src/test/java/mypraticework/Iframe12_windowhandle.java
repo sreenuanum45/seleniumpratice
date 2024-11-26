@@ -42,6 +42,7 @@ public class Iframe12_windowhandle {
 		driver.findElement(By.id("w3loginbtn")).click();
 		Thread.sleep(5000);
 		driver.switchTo().window(l1.get(1));
+		driver.close();
 	}
 
 }

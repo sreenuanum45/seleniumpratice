@@ -13,12 +13,9 @@ import java.util.Date;
 public class ExcelFile_9 {
     @Test
     public void method1() throws IOException {
-
         Workbook workbook = new XSSFWorkbook();
-
         // Create a sheet
         Sheet sheet = workbook.createSheet("Sheet 1");
-
         // Create and format a cell
         Row row = sheet.createRow(0);
         Cell cell = row.createCell(0);
@@ -42,7 +39,6 @@ public class ExcelFile_9 {
         cell.setCellValue(7);
         cell = row.createCell(2);
         cell.setCellFormula("A2+B2");
-
         // Save the workbook to a file
         try (FileOutputStream fos = new FileOutputStream("src/test/resources/Datafiles/Test1.xlsx")) {
             workbook.write(fos);
@@ -50,7 +46,6 @@ public class ExcelFile_9 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         // Read data from an existing Excel file
         try (FileInputStream fis = new FileInputStream("src/test/resources/Datafiles/Test1.xlsx")) {
             workbook = new XSSFWorkbook(fis);
@@ -61,12 +56,10 @@ public class ExcelFile_9 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         // Add a date value
         row = sheet.createRow(2);
         cell = row.createCell(0);
         cell.setCellValue(new Date());
-
         // Save the updated workbook
         try (FileOutputStream fos = new FileOutputStream("example.xlsx")) {
             workbook.write(fos);

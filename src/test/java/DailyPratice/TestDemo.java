@@ -1,11 +1,9 @@
 package DailyPratice;
 
+import AdvanceSeleniumPratice.SeleniumListeners.MyWebDriverListener;
 import com.github.javafaker.Faker;
-
-import mypractice_utility.AdvanceSeleniumPratice.SeleniumListeners.MyWebDriverListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -15,6 +13,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
 import java.time.Duration;
 
 public class TestDemo {
@@ -23,7 +22,8 @@ public class TestDemo {
    public Faker faker ;
   @Test(priority = 1,alwaysRun = true,invocationCount = 4)
 
-    public void method1() throws InterruptedException {
+    public void method1() throws InterruptedException, AWTException {
+
       ChromeOptions options = new ChromeOptions();
       System.out.println();
       options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});

@@ -29,11 +29,13 @@ public class ScreenShotUtility {
 
     }
     public static void fullPageScreenshot(RemoteWebDriver driver,String destinationFilepath) throws IOException {
+
         AShot as=new AShot();
         ShootingStrategy shs= ShootingStrategies.viewportPasting(1000);
         Screenshot ss=as.shootingStrategy(shs).takeScreenshot(driver);
         File dest=new File(destinationFilepath);
         ImageIO.write(ss.getImage(),"PNG",dest);
+
 
     }
     public  static  void ByteArrayScreenshot(WebElement element){
@@ -63,5 +65,12 @@ public class ScreenShotUtility {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void fullpageScreenshot(File destinationFilepath, RemoteWebDriver driver) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+  destinationFilepath=new File(System.getProperty("user.dir")+"\\sreenuimages\\fullpage.png");
+destinationFilepath.renameTo(sourceFile);
+
     }
 }

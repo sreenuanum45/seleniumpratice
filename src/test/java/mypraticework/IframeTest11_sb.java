@@ -24,6 +24,7 @@ public class IframeTest11_sb {
 		WebElement shadowhostelement2 = ShadowrootElemetouter.findElement(By.id("app2"));
 		SearchContext ShadowrootElemetinner = (WebElement) shadowhostelement2.getShadowRoot();
 		WebElement targetelementinner = ShadowrootElemetinner.findElement(By.id("pizza"));
+		driver.switchTo().activeElement().sendKeys();
 		try {
 			targetelementinner.click();
 			targetelementinner.sendKeys("i love biryani at lunch time");

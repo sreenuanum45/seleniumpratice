@@ -21,7 +21,6 @@ public class ExcelFile_1A {
         for(int i=0;i<nos;i++){
             Sheet sh=wb.getSheetAt(i);
             String sheetname=sh.getSheetName();
-
             try{
                 int numberofrows=sh.getPhysicalNumberOfRows();
                 int numberofcoloums=sh.getRow(i).getLastCellNum();
@@ -29,8 +28,6 @@ public class ExcelFile_1A {
             }catch (Exception e){
                System.out.println(e.getMessage());
             }
-
-
         }
         wb.close();
         fi.close();

@@ -21,6 +21,7 @@ public class FluentwaitPratice_1 {
 
        wait.withTimeout(Duration.ofSeconds(20));
 wait.pollingEvery(Duration.ofMillis(1000));
+wait.ignoring(Exception.class);
 
         WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(10),Duration.ofSeconds(3000));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user-name"))).sendKeys("standard_user");

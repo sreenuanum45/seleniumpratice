@@ -17,24 +17,20 @@ public class Cookie_1 {
         driver.get("https://www.amazon.in");
         driver.manage().window().maximize();
         CookiesUtility cu=new CookiesUtility();
+        System.out.println("count of cookies:"+cu.getCookiesCount(driver));
+      System.out.println("cookies list:"+cu.getCookiesList(driver));
 
-
-
-        System.out.println(cu.getCookiesCount(driver));
-      System.out.println(cu.getCookiesList(driver));
         List <String> cookies=cu.getCookiesList(driver);
         for(String c:cookies){
-
-        System.out.println(c);
-
+            System.out.println(c);
         }
         //get cookies type
         System.out.println("@=============*");
         List <String> cookiesTypes= cu.getTypeofCookies(driver,"https://www.amazon.in","https://www.amazon.com");
         for(String c:cookiesTypes){
-
-            System.out.println(c);
+            System.out.println("type of cookies:"+c);
         }
+
     }
     @BeforeTest
     public void setup(){

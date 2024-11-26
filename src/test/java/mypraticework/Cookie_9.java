@@ -25,8 +25,8 @@ driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         //do login
         driver1.findElement(By.xpath("//strong[text()='Log in']/parent::a")).click();
         Thread.sleep(5000);
-        driver1.findElement(By.name("username")).sendKeys("magnitiait");
-        driver1.findElement(By.name("password")).sendKeys("Magnitia@264");
+        driver1.findElement(By.name("username")).sendKeys("sreenuanumandla@yahoo.com");
+        driver1.findElement(By.name("password")).sendKeys("Veeru80@");
         driver1.findElement(By.xpath("//span[text()='Log in']/parent::button")).click();
         Thread.sleep(5000);
         //Collect all cookies from chrome browser
@@ -35,10 +35,10 @@ driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
     }
     @Test(priority = 2)
     public void method2() throws InterruptedException {
+        driver2 = new EdgeDriver();
         driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         WebDriverManager.edgedriver().setup();
 
-        driver2 = new EdgeDriver();
         Thread.sleep(3000);
         driver2.manage().window().maximize();
         driver2.get("https://www.fastmail.com");

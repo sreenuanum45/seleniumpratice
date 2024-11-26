@@ -12,10 +12,8 @@ public class WebElements_Click_2 {
 
     @Test
     public  void method1(){
-        driver = new ChromeDriver();
-       driver.get("https://demos.telerik.com/aspnet-ajax/ajaxloadingpanel/functionality/explicit-show-hide/defaultcs.aspx");
-
-        driver.findElement(By.linkText("31")).click();
+        driver.get("https://demos.telerik.com/aspnet-ajax/ajaxloadingpanel/functionality/explicit-show-hide/defaultcs.aspx");
+       driver.findElement(By.linkText("31")).click();
     }
     @BeforeTest
     public void Setup() throws InterruptedException {

@@ -7,22 +7,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.util.List;
+
 public class carouselslidertest {
 
 	public static void main(String[] args) throws Throwable {
-		// TODO Auto-generated method stub
-
-
 		WebDriverManager.chromedriver().setup();
 		RemoteWebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
 		driver.get("https://mdbootstrap.com/docs/b4/jquery/plugins/carousel-3d/");
-		for (int i = 1; i <= 4; i++) {
-			WebElement slider = driver.findElement(By.xpath("(//div[@class='carousel-3d-inner'])[" + i + "]"));
+		driver.findElement(By.xpath("//button[@id='accept_cookies_btn']")).click();
+		List<WebElement> elements = driver.findElements(By.xpath("(//div[@class='carousel-item active'])"));//<div class="carousel-item">
+		for (int i = 1; i <= elements.size(); i++) {
+			WebElement slider = driver.findElement(By.xpath("(//div[@class='carousel-item active'])["+i+"]"));
 			driver.executeScript("arguments[0].style.border='3px solid red';", slider);
 			CarouselSliderUtility obj = new CarouselSliderUtility();
-
 			int s = obj.getCountOfSlider(slider);
 			System.out.println(s);
 			String s1 = obj.getTypeOfSlider(slider);

@@ -21,12 +21,20 @@ WebDriverManager.chromedriver().setup();
 		WebElement slider = driver.findElement(By.xpath("//div[@id='top-banner']"));
 		CarouselSliderUtility obj = new CarouselSliderUtility();
 		int i = obj.getCountOfSlider(slider);
-		System.out.println(i);
-		System.out.println(obj.getTypeOfSlider(slider));
+		System.out.println("count of slides in page:"+i);
+		System.out.println("Type of slider:"+obj.getTypeOfSlider(slider));
 		boolean b = obj.AreSliderMovingAutomaticallyInSlider(slider);
-		System.out.println(b);
-		System.out.println(obj.getMovingDirectionOfSlider(slider));
-		System.out.println(obj.getSliderMoveDuration(slider));
+		System.out.println("slider moving automatically:"+b);
+		System.out.println("moving direction of slider:"+obj.getMovingDirectionOfSlider(slider));
+		System.out.println("moving duration of slider:"+obj.getSliderMoveDuration(slider));
+		System.out.println("moving style of slider:"+obj.getslideMovingStyle(slider));
+		System.out.println("moving delay of slider:"+obj.getDelayBetweenSlidesMove(slider));
+		obj.pauseSlider(slider);
+		obj.moveToSlide(slider, 3);
+		obj.isSliderPaused(slider);
+		driver.quit();
+
+
 
 	}
 

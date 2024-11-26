@@ -1,15 +1,10 @@
 package DevtoolsExamples;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 import java.util.Map;
-
-import static org.bouncycastle.asn1.x500.style.RFC4519Style.c;
 
 public class OpenNewBrowser {
 

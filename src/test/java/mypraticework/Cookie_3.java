@@ -24,7 +24,6 @@ public class Cookie_3 {
             driver.get("https://login.yahoo.com");
             driver.manage().window().maximize();
             Thread.sleep(1000);
-
             driver.findElement(By.id("login-username")).sendKeys("sreenuanumandla@yahoo.com");
             driver.findElement(By.id("login-signin")).click();
             Thread.sleep(1000);

@@ -17,7 +17,6 @@ public class Psuedo_2 {
         driver.get("https://accounts.google.com/");
         WebElement e=driver.findElement(By.linkText("Learn more"));
         String s = (String) driver.executeScript("var ps = window.getComputedStyle(arguments[0], '::after'); var s = ps.getPropertyValue('color'); return s;", e);
-
         System.out.println(s);
     }
 }

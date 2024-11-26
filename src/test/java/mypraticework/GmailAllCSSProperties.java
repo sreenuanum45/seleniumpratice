@@ -1,6 +1,7 @@
 package mypraticework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import mypractice_utility.CSSProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,20 +21,11 @@ public class GmailAllCSSProperties
         Thread.sleep(5000);
         //Locate element
         WebElement e=driver.findElement(By.xpath("//button[text()='Forgot email?']"));
-
         // 1. Get all attributes and properties of the element via the console tab in the inspect window
         // 2. Get all CSS properties of the element via the styles tab in inspect or via the below code
-        String y1 = (String) driver.executeScript(
-                "var s='';"
-                        + "var o=window.getComputedStyle(arguments[0]);"
-                        + "for(var i=0; i<o.length; i++)"
-                        + "{"
-                        +     "s=s+o[i]+':'+o.getPropertyValue(o[i])+',';"
-                        + "}"
-                        + "return(s);", e);
-
-        System.out.println(y1);
-        //close site
-        driver.close();
+        CSSProperties cp = new CSSProperties();;
+// System.out.println(cp.getCSSPropertiesNames(e, driver));
+        System.out.println(cp.getCSSPropertiesValues(e, driver));
+ driver.close();
     }
 }

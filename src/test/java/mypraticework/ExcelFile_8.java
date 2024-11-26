@@ -32,7 +32,6 @@ public class ExcelFile_8 {
             int numberOfColoumn = r.getLastCellNum();
             for (int j = 0; j < numberOfColoumn; j++) {
                 String cellvalue = df.formatCellValue(r.getCell(j));
-
                 System.out.print(cellvalue+"  ");
             }
             System.out.println();

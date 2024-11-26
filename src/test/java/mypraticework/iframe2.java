@@ -16,6 +16,7 @@ public class iframe2 {
 		driver.findElement(By.xpath("//input[@type='file'][1]"))
 				.sendKeys("C:\\Users\\sreenu\\OneDrive\\Pictures\\Screenshot 2023-05-25 094258.png");
 		driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
+		driver.quit();
 	}
 
 }

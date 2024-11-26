@@ -22,7 +22,6 @@ public class Cookie_7 {
         driver.manage().window().maximize();
         driver.get("https://www.youtube.com");
         Thread.sleep(1000);
-
     }
     @Test(priority=1)
     public void method2(){

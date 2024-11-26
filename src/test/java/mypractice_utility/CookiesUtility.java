@@ -18,66 +18,95 @@ public class CookiesUtility {
         Set<Cookie> s = driver.manage().getCookies();
         List<Cookie> l = new ArrayList<Cookie>(s);
         List<String> names = new ArrayList<String>();
-
         for (Cookie c : l) {
-            names.add(c.getName() + "  " + c.getDomain() + "   " + "   " + c.getExpiry());
+            names.add(c.getName() + "  " + c.getDomain() + "   " + "   " + c.getExpiry() + "   " + c.getPath() +"  "+c.isSecure());
         }
         return names;
     }
-    public List<String>getTypeofCookies(RemoteWebDriver driver, String samedomain, String superdomain){
+
+    public List<String> getTypeofCookies(RemoteWebDriver driver, String samedomain, String superdomain) {
         Set<Cookie> s = driver.manage().getCookies();
         List<Cookie> l = new ArrayList<Cookie>(s);
-        List<String> Types= new ArrayList<String>();
-        for (Cookie c:l){
-            if (c.isHttpOnly()){
-                if (c.getExpiry()!=null){
-                Types.add(c.getName()+"isHttpOnly session cookie");
+        List<String> Types = new ArrayList<String>();
+        for (Cookie c : l) {
+            if (c.isHttpOnly()) {
+                if (c.getExpiry() != null) {
+                    Types.add(c.getName() + "isHttpOnly session cookie");
+                } else {
+                    Types.add("isHttpOnly and persistance cookie and its expiry" + c.getExpiry());
                 }
-                else{
-                    Types.add("isHttpOnly and persistance cookie and its expiry"+c.getExpiry());
-                }
-            }
-            else if (c.isSecure()){
-                if (c.getExpiry()!=null){
-                    Types.add(c.getName()+"isHttps session cookie");
-                }
-                else{
-                    Types.add("isHttps and persistance cookie and its expiry"+c.getExpiry());
+            } else if (c.isSecure()) {
+                if (c.getExpiry() != null) {
+                    Types.add(c.getName() + "isHttps session cookie");
+                } else {
+                    Types.add("isHttps and persistance cookie and its expiry" + c.getExpiry());
                 }
             } else if (c.getDomain().contains(samedomain)) {
-
-                Types.add(c.getName()+" is Same-site cookie");
+                Types.add(c.getName() + " is Same-site cookie");
             } else if (c.getDomain().contains(superdomain)) {
-                Types.add(c.getName()+" is Super-site cookie");
+                Types.add(c.getName() + " is Super-site cookie");
+            } else if (c.getDomain().equals("localhost")) {
+                Types.add(c.getName() + " is localhost cookie");
+            } else {
+                Types.add(c.getName() + " is third-party cookie and it came from " + c.getDomain());
             }
-            else {
-               Types.add(c.getName()+" is third-party cookie and it came from "+c.getDomain());
-            }
-
         }
-    return Types;
+        return Types;
     }
+
     public void addNewCookie(RemoteWebDriver driver, String name, String value, String domain,
-                             String path, Date expiryDate, boolean isSecure, boolean isHttpOnly, String sameSite)
-    {
-        Cookie c=new Cookie(name, value, domain, path, expiryDate, isSecure, isHttpOnly, sameSite);
+                             String path, Date expiryDate, boolean isSecure, boolean isHttpOnly, String sameSite) {
+        Cookie c = new Cookie(name, value, domain, path, expiryDate, isSecure, isHttpOnly, sameSite);
         driver.manage().addCookie(c);
     }
 
     public void addNewCookieViaBuilder(RemoteWebDriver driver, String name, String value,
-                                       String domain,String path,Date expiry,Boolean isSecure,Boolean isHttpOnly,String sameSite)
-    {
-        Cookie.Builder b=new Cookie.Builder(name,value);
-        Cookie c=b.domain(domain).path(path).expiresOn(expiry).isSecure(isSecure)
-                .isHttpOnly(isHttpOnly).sameSite(sameSite).build();
-
+                                       String domain, String path, Date expiry, Boolean isSecure, Boolean isHttpOnly, String sameSite) {
+        Cookie.Builder b = new Cookie.Builder(name, value);
+        Cookie c = b.domain(domain).path(path).expiresOn(expiry).isSecure(isSecure).isHttpOnly(isHttpOnly).sameSite(sameSite).build();
         driver.manage().addCookie(c);
     }
-    public  void DeleteCookies(RemoteWebDriver driver){
+
+    public void DeleteCookies(RemoteWebDriver driver) {
 
         driver.manage().deleteAllCookies();
     }
 
+    public void DeleteCookiesViaBuilder(RemoteWebDriver driver, String name, String value, String domain,
+                                        String path, Date expiryDate, boolean isSecure, boolean isHttpOnly, String sameSite) {
+        Cookie.Builder b = new Cookie.Builder(name, value);
+        Cookie c = b.domain(domain).path(path).expiresOn(expiryDate).isSecure(isSecure)
+                .isHttpOnly(isHttpOnly).sameSite(sameSite).build();
+        driver.manage().deleteCookie(c);
+    }
 
+    public void DeleteCookiesViaName(RemoteWebDriver driver, String name) {
+        driver.manage().deleteCookieNamed(name);
+    }
+
+    public void DeleteCookiesViaNameViaBuilder(RemoteWebDriver driver, String name, String value, String domain,
+                                               String path, Date expiryDate, boolean isSecure, boolean isHttpOnly, String sameSite) {
+        Cookie.Builder b = new Cookie.Builder(name, value);
+        Cookie c = b.domain(domain).path(path).expiresOn(expiryDate).isSecure(isSecure)
+                .isHttpOnly(isHttpOnly).sameSite(sameSite).build();
+        driver.manage().deleteCookieNamed(name);
+    }
+    public void DeleteAllCookiesViaBuilder(RemoteWebDriver driver, String name, String value, String domain,
+                                            String path, Date expiryDate, boolean isSecure, boolean isHttpOnly, String sameSite) {
+        Cookie.Builder b = new Cookie.Builder(name, value);
+        Cookie c = b.domain(domain).path(path).expiresOn(expiryDate).isSecure(isSecure)
+                .isHttpOnly(isHttpOnly).sameSite(sameSite).build();
+        driver.manage().deleteAllCookies();
+    }
+    public void DeleteAllCookiesViaName(RemoteWebDriver driver, String name) {
+        driver.manage().deleteAllCookies();
+    }
+    public void DeleteAllCookiesViaNameViaBuilder(RemoteWebDriver driver, String name, String value, String domain,
+                                                   String path, Date expiryDate, boolean isSecure, boolean isHttpOnly, String sameSite) {
+        Cookie.Builder b = new Cookie.Builder(name, value);
+        Cookie c = b.domain(domain).path(path).expiresOn(expiryDate).isSecure(isSecure)
+                .isHttpOnly(isHttpOnly).sameSite(sameSite).build();
+        driver.manage().deleteAllCookies();
+    }
 
 }

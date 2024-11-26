@@ -36,8 +36,6 @@ public class ExcelFileProject {
    SimpleDateFormat sf;
    Sheet sh=null;
     Workbook wb;
-
-
     //load the propertiesfile
     @Test(priority = 0)
     public void method1() throws IOException {
@@ -79,13 +77,12 @@ public class ExcelFileProject {
             wb.close();
             System.exit(0);
         }
-
     }
     @Test(priority = 3)
     public void method4() throws  InterruptedException {
         driver.manage().window().maximize();
         driver.get(p.getProperty("url"));
-        Thread.sleep(Long.parseLong(p.getProperty("waittime")));
+        //Thread.sleep(Long.parseLong(p.getProperty("waittime")));
     }
     @Test(priority = 4)
     public void method5( ) throws ATUTestRecorderException, InterruptedException, IOException {
@@ -134,7 +131,7 @@ public class ExcelFileProject {
             else{
                 select.selectByIndex(4);
             }
-            Thread.sleep(Long.parseLong(p.getProperty("waittime")));
+
       driver.findElement(By.id("register_0")).submit();
       //String textappers=driver.findElement(By.tagName("h1")).getText();
            // Reporter.log(textappers);

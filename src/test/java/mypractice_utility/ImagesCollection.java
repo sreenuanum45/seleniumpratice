@@ -22,16 +22,12 @@ public class ImagesCollection {
 	            folder.mkdirs();
 	        }
 	        //collect all images in page
-	        
-	       
-	        Thread.sleep(5000);
+		Thread.sleep(5000);
 	        System.out.println(images.size());
 	        int count=0;
 	        for(WebElement image:images) {
-	        	
-	        	//every image have src value
-
-	        	String imageurl=image.getAttribute("src");
+				//every image have src value
+				String imageurl=image.getAttribute("src");
 	        	if(imageurl!=null&&!imageurl.isBlank()) {
 	        	//give the filename
 	        	String filename="image"+count+".jpg";
@@ -56,5 +52,8 @@ public class ImagesCollection {
 	}
 	        System.out.println("total images count:"+count);
 	}
+
+
+
 
 }

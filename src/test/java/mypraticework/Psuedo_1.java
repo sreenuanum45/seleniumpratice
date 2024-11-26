@@ -1,6 +1,5 @@
 package mypraticework;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,12 +11,10 @@ public class Psuedo_1 {
 
     @Test(priority = 1)
     public void method1() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://accounts.google.com/");
         WebElement e= driver.findElement(By.xpath("//button[text()='Forgot email?']"));
         String ss = (String) driver.executeScript("var ps = window.getComputedStyle(arguments[0], '::after'); var s = ps.getPropertyValue('color'); return s;", e);
-
         System.out.println(ss);
     }
 }

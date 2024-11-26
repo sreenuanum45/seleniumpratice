@@ -8,6 +8,14 @@ public class Z {
 		obj1.method();
 		Y obj2 = new Y();
 		obj2.method();
-	}
 
-}
+				String message = "Your confirmation code is 228890";
+
+				// Extract only digits
+				String number = message.replaceAll("[^0-9]", "");
+
+				System.out.println("Extracted Number: " + number);
+			}
+		}
+
+

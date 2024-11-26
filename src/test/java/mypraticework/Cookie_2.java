@@ -19,12 +19,9 @@ public class Cookie_2 {
         driver.get("https://www.amazon.in");
         driver.manage().window().maximize();
          cu=new CookiesUtility();
-
-        System.out.println(cu.getCookiesCount(driver));
-        // System.out.println(cu.getCookiesList(driver));
+         System.out.println(cu.getCookiesCount(driver));
         List<String> cookies=cu.getCookiesList(driver);
         for(String c:cookies){
-
             System.out.println(c);
         }
         //get cookies type
@@ -40,13 +37,10 @@ public class Cookie_2 {
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("iphones");
         System.out.println("after Searching the word");
         cu=new CookiesUtility();
-
         System.out.println(cu.getCookiesCount(driver));
-        // System.out.println(cu.getCookiesList(driver));
         List<String> cookies=cu.getCookiesList(driver);
         for(String c:cookies){
-
-            System.out.println(c);
+ System.out.println(c);
         }
         //get cookies type
         System.out.println("@=============*");

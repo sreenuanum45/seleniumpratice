@@ -13,11 +13,9 @@ import java.util.List;
 public class Cookie_5 {
     CookiesUtility cu;
     RemoteWebDriver driver;
-
     @Test
     public void AmazonTest(){
         cu=new CookiesUtility();
-
         System.out.println(cu.getCookiesCount(driver));
         System.out.println(cu.getCookiesList(driver));
         List<String> types= cu.getTypeofCookies(driver,"https://www.amazon.in","https://www.amazon.com");

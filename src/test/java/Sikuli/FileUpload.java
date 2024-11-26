@@ -23,10 +23,7 @@ public class FileUpload {
         Actions ac = new Actions(driver);
         ac.moveToElement(e).moveByOffset(-10, 0).click().build().perform();
         Screen s=new Screen();
-
         s.type("E:\\caputureimages\\filename.png","E:\\caputureimages\\signin.png");
-
-        Thread.sleep(10000);
         s.click("E:\\caputureimages\\open.png");
         driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
 

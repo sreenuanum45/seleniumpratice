@@ -1,10 +1,8 @@
 package DailyPratice;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -13,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class SmsBomber {
-    @Test(priority = 1,invocationCount = 3,threadPoolSize = 3)
+    @Test(priority = 1,invocationCount = 10,threadPoolSize = 5)
     public void method1() {
         /*String proxyAddress = "127.0.0.1:8080"; // Replace with your proxy address and port
         Proxy proxy = new Proxy();

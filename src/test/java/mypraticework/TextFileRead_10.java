@@ -34,17 +34,12 @@ public class TextFileRead_10 {
                     String temp=""+(a/b);
                     bw.write(temp);
                     bw.newLine();
-
-                    
                 } else   {
 
                     String temp=""+(a/b);
                     bw.write(temp);
                     bw.newLine();
                 }
-
-
-
             }
             br.close();
             fr.close();

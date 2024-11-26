@@ -6,8 +6,6 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.apache.commons.lang3.BooleanUtils.forEach;
-
 public class Paralle_Stream_vsSequentialStream {
     public static void main(String[] args) {
         ForkJoinPool pool = new ForkJoinPool();

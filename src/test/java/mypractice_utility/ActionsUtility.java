@@ -93,4 +93,51 @@ public class ActionsUtility {
         wait.until(ExpectedConditions.visibilityOf(e));
         act.dragAndDropBy(e,xoffset,yoffset).pause(5000).build().perform();
     }
+    //Helper methods
+
+    public void moveToElement(WebElement e)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        act.moveToElement(e).perform();
+    }
+    //mouse actions by using actions class
+    public void mouseHover(WebElement e)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        act.moveToElement(e).perform();
+    }
+
+    public void mouseHoverAndClick(WebElement e)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        act.moveToElement(e).pause(Duration.ofSeconds(3)).click().build().perform();
+    }
+
+    public void mouseHoverAndDoubleClick(WebElement e)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        act.moveToElement(e).pause(Duration.ofSeconds(3)).doubleClick().build().perform();
+    }
+
+    public void mouseHoverAndRightClick(WebElement e)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        act.moveToElement(e).pause(Duration.ofSeconds(3)).contextClick().build().perform();
+    }
+
+    public void mouseHoverAndDragDrop(WebElement e1, WebElement e2)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e1));
+        wait.until(ExpectedConditions.visibilityOf(e2));
+        act.moveToElement(e1).pause(Duration.ofSeconds(3)).dragAndDrop(e1,e2).build().perform();
+    }
+
+    public void mouseHoverAndMoveByOffset(WebElement e, int xoffset, int yoffset)
+    {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        act.moveToElement(e).pause(Duration.ofSeconds(3)).moveByOffset(xoffset,yoffset).build().perform();
+    }
+
+
+
 }

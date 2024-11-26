@@ -17,14 +17,15 @@ public class Cookie_8 {
     RemoteWebDriver driver;
     @Test(priority = 1)
     public  void method1() throws InterruptedException {
-
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//strong[text()='Log in']/parent::a")).submit();
-        Thread.sleep(10000);
+        WebElement ee=driver.findElement(By.xpath("((//header//ul//li)//a)[27]"));
+        Thread.sleep(1000);
+        ee.click();
+        Thread.sleep(1000);
         WebElement e=driver.findElement(By.name("username"));
         e.sendKeys("sreenuanumandla@fastmail.com");
         Thread.sleep(1000);
-        driver.findElement(By.name("password")).sendKeys("Veeru80@");
+        driver.findElement(By.name("current-password")).sendKeys("Veeru80@");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//span[text()='Log in']")).click();
         Thread.sleep(1000);
