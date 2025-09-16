@@ -1,0 +1,95 @@
+# Created at 2025-02-03T22:32:40.503
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+# Created at 2025-02-03T22:32:45.710
+Unexpected IOException: 6,1,AdvanceSeleniumPratice.SeleniumListeners.Test1,method(AdvanceSeleniumPratice.SeleniumListeners.Test1),null,null,null
+
+
+# Created at 2025-02-03T22:32:45.713
+Unexpected IOException: 5,1,DailyPratice.AppTest,testExample(DailyPratice.AppTest),DailyPratice.AppTest,null,null
+
+
+# Created at 2025-02-03T22:32:47.492
+Unexpected IOException: 8,1,DailyPratice.AppTest,testExample(DailyPratice.AppTest),null,Authentication failed\002C check your API key.,null,Authentication failed\002C check your API key.,AppTest.testExample:31 \00BB Mailosaur Authentication failed\002C check your API key.,com.mailosaur.MailosaurException: Authentication failed\002C check your API key.\000A\0009at DailyPratice.AppTest.testExample(AppTest.java:31)\000A
+
+
+# Created at 2025-02-03T22:32:47.495
+Unexpected IOException: 5,1,DailyPratice.TestDemo,method1(DailyPratice.TestDemo),DailyPratice.TestDemo,null,null
+
+
+# Created at 2025-02-03T22:32:47.496
+Unexpected IOException with stream: 
+
+
+# Created at 2025-02-03T22:32:49.318
+Unexpected IOException with stream: Feb 03, 2025 10:32:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 132
+
+
+# Created at 2025-02-03T22:32:49.319
+Unexpected IOException with stream: Feb 03, 2025 10:32:49 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 132.0.6834.160. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+
+
+# Created at 2025-02-03T22:32:58.081
+Unexpected IOException with stream: Before closing the browser
+
+
+# Created at 2025-02-03T22:32:58.815
+Unexpected IOException with stream: Feb 03, 2025 10:32:58 PM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: An existing connection was forcibly closed by the remote host
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:245)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:223)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1153)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:821)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:175)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:198)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:271)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:224)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:763)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:941)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:245)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:957)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:912)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:912)
+
+
+
+# Created at 2025-02-03T22:33:00.119
+Unexpected IOException with stream: After closing the browser
+
+
+# Created at 2025-02-03T22:33:00.123
+Unexpected IOException: 6,1,DailyPratice.TestDemo,method1(DailyPratice.TestDemo),null,null,null
+
+
+# Created at 2025-02-03T22:33:00.129
+Unexpected IOException: 5,1,DailyPratice.TestDemo,method1(DailyPratice.TestDemo),DailyPratice.TestDemo,null,null
+
+
+# Created at 2025-02-03T22:33:00.130
+Unexpected IOException with stream: 
+
+
+# Created at 2025-02-03T22:33:01.638
+Unexpected IOException with stream: Feb 03, 2025 10:33:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 132
+
+
+# Created at 2025-02-03T22:33:01.641
+Unexpected IOException with stream: Feb 03, 2025 10:33:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 132.0.6834.160. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+
+
